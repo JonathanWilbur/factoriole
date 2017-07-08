@@ -1,0 +1,33 @@
+{
+  "name": "factoriole",
+  "version": "1.0.0",
+  "description": "A simple fact database",
+  "main": "server/main.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.6",
+    "email": "^0.2.6",
+    "express": "^4.15.3",
+    "imap": "^0.8.18",
+    "mailparser": "^0.6.2",
+    "mongoose": "^4.11.1",
+    "node-mbox": "^0.3.0",
+    "sendmail": "^1.0.0",
+    "twit": "^2.2.9",
+    "xml": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fact",
+    "database",
+    "searchable",
+    "info",
+    "information"
+  ],
+  "author": "Jonathan M. Wilbur",
+  "license": "ISC"
+}

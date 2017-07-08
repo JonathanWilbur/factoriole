@@ -1,0 +1,80 @@
+#headerdiv {
+  margin: 0px;
+  padding: 10px;
+  height: 40px;
+  background-color: #002222;
+}
+
+#title {
+  margin: 10px;
+  font-size: 24pt;
+}
+
+#subtitle {
+  margin: 10px;
+  color: #008888;
+}
+
+input[type='text'] {
+  background-color: #002222;
+  color: #00AAAA;
+  padding: 10px;
+  margin: 5px;
+}
+
+.field {
+  margin: 20px;
+}
+
+.field label {
+  margin: 0px;
+  display: block;
+}
+
+.field textarea {
+  vertical-align: top;
+  width: 80vw;
+  max-width: 1000px;
+  height: 200px;
+  resize: none;
+  overflow-y: scroll;
+}
+
+#fact {
+  width: 80vw;
+  max-width: 1000px;
+}
+
+.source {
+  display: block;
+  width: 80vw;
+  max-width: 1000px;
+}
+
+#submit {
+  background-color: #008844;
+  color: #00FFAA;
+  min-width: 200px;
+  padding: 20px;
+  font-size: 16pt;
+  margin: 20px;
+}
+
+#submit:hover {
+  background-color: #00FFAA;
+  color: yellow;
+}
+
+#cancel {
+  background-color: #880044;
+  color: #FF00AA;
+  min-width: 200px;
+  padding: 20px;
+  font-size: 16pt;
+  margin: 20px;
+}
+
+#cancel:hover {
+  background-color: #FF00AA;
+  color: yellow;
+}

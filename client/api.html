@@ -1,0 +1,137 @@
+<html ng-app="factoriole">
+  <head>
+    <title>Factoriole</title>
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./api.css" />
+  </head>
+  <body>
+    <div id="headerdiv">
+      <span id="title"><a onclick="window.location = '/index.html'">Factoriole</a></span>
+      <span id="subtitle">The internet's greatest database for facts.</span>
+    </div>
+    <div class="underheader"></div>
+    <div id="content">
+
+      <h1>Factoriole API Documentation</h1>
+      
+      <p>
+        Factoriole provides a simple JSON-based REST API for developers to incorporate facts into Apps.
+        The individual resources are detailed below.
+        To keep things simple, all API transactions are limited to 100 requests per fifteen minutes.
+        Check the documentation regularly. This API is quite young and is subject to considerable change at this time.
+      </p>
+
+      <div class="resource">
+        <h2>/facts</h2>
+        <div class="method">
+          <h3>GET</h3>
+          <p>
+            Returns an array of summarized facts using query parameters as the basis for search.
+            (More detail can be acquired by querying the facts individually using /facts/:id described below.)
+            If active=false is not included in the query parameters, only active facts will be displayed.
+            Note that inactive facts are inactive for a reason: they are probably incorrect--
+            so use them at your own peril.
+            Each request will only return a max of 25 facts, but you may request fewer by using the limit=# query parameter.
+            You may use since=# and until=# query parameters to select facts by the time they were added to the database,
+            where # is a Unix timestamp.
+            You may also search by tags=$, where $ is a searchable tag. All facts have four searchable tags.
+            You may search by three tags per query;
+            you can list multiple tags by simply using the tags=$ query parameter repeatedly.
+          </p>
+          <h4>Example URL</h4>
+          <code>/facts?tags=lgbt&since=1234567890&limit=1</code>
+          <h4>Example Request</h4>
+          <code></code>
+          <h4>Example Response</h4>
+          <code></code>
+        </div>
+        <div class="method">
+          <h3>POST</h3>
+          <p>
+            Creates a new fact. Only invited users who can provide a valid session cookie with HTTP requests may create facts.
+          </p>
+          <table>
+            <tr>
+              <th>Field</th>
+              <th>Required?</th>
+              <th>Limitations</th>
+            </tr>
+            <tr>
+              <td>fact</td>
+              <td>yes</td>
+              <td>Max 140 characters.</td>
+            </tr>
+            <tr>
+              <td>details</td>
+              <td>no</td>
+              <td>Max 65536 characters.</td>
+            </tr>
+            <tr>
+              <td>tags</td>
+              <td>yes</td>
+              <td>You must have four tags; no more, no less.</td>
+            </tr>
+            <tr>
+              <td>hashtags</td>
+              <td>no</td>
+              <td>You may not exceed four hashtags per fact. Additional hashtags will silently be truncated.</td>
+            </tr>
+            <tr>
+              <td>sources</td>
+              <td>yes</td>
+              <td>
+                You must provide at least one source, and that one source must have the citationMLA field filled in.
+                If you do not provide valid MLA citation in this field, the fact will be found and disabled by an administrator.
+                Repeated offenses will result in account deactivation.
+                You may also provide the publicationTime field, which takes a Unix timestamp,
+                an organization field, which takes the source's organization, such as 'Bureau of Justic Statistics',
+                and an authors field, which takes the names of the source's authors in an array of strings.
+              </td>
+            </tr>
+          </table>
+          <h4>Example URL</h4>
+          <code>/facts</code>
+          <h4>Example Request</h4>
+          <code></code>
+          <h4>Example Response</h4>
+          <code></code>
+        </div>
+      </div>
+
+      <div class="resource">
+        <h2>/facts/:id</h2>
+        <div class="method">
+          <h3>GET</h3>
+          <p>
+            Returns a single fact in full-detail, unlike the other transactions.
+            This URL takes no query parameters.
+            This is the one transaction for which you are not rate-limited.
+          </p>
+        </div>
+      </div>
+
+      <div class="resource">
+        <h2>/facts/recent</h2>
+        <div class="method">
+          <h3>GET</h3>
+          <p>
+            Returns an array of the most recent facts.
+            Returns five facts unless the limit query parameter specifies a different amount less than 25.
+          </p>
+        </div>
+      </div>
+
+      <div class="resource">
+        <h2>/facts/random</h2>
+        <div class="method">
+          <h3>GET</h3>
+          <p>
+            Returns an array of a random assortment of facts.
+            Returns five facts unless the limit query parameter specifies a different amount less than 25.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<html ng-app="factoriole">
+  <head>
+    <title>Factoriole</title>
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <script type="text/javascript" src="./angular.min.js"></script>
+    <script type="text/javascript" src="./index.js" defer></script>
+  </head>
+  <body>
+    <div id="headerdiv">
+      <span id="title"><a onclick="window.location = '/index.html'">Factoriole</a></span>
+      <span id="subtitle">The internet's greatest database for facts.</span>
+    </div>
+    <div id="sidebar">
+      <div id="underheader1" class="underheader"></div>
+      <span>Search:</span>
+      <input
+        id="search"
+        type="text"
+        placeholder="Search for facts"
+        ng-model="searchQuery"
+        ng-maxlength="32"
+        ng-controller="searchbar"
+        ng-change="search(searchQuery)">
+      </input>
+      <div id="tagcloud" ng-controller="tagcloud">
+        <span>Popular Tags:</span>
+        <div id="tags">
+          <span ng-repeat="tag in tags">
+            <a class="sidebar tag" ng-click="searchTag(tag.tag)">{{tag.tag}}</a>
+             
+          </span>
+        </div>
+      </div>
+      <div id="navbar" ng-controller="navbar">
+        <span>Links:</span>
+        <a class="nav" href="/search.html">Advanced Search</a>
+        <a class="nav" ng-click="showRecent()">Recent</a>
+        <a class="nav" ng-click="showRandom()">Random</a>
+        <a class="nav" ng-click="showAbout()">About</a>
+        <a class="nav" ng-click="showContact()">Contact</a>
+        <a class="nav" ng-click="showReadingList()">Reading List</a>
+        <a class="nav" target="_blank" href="/api.html">Factoriole API</a>
+        <a class="nav" target="_blank" href="/add.html">Add fact</a>
+      </div>
+    </div>
+    <div id="content-column">
+      <div id="underheader2" class="underheader"></div>
+        <div id="content"></div>
+        <input
+          id="searchbar"
+          type="text"
+          placeholder="Search for facts"
+          ng-model="searchQuery"
+          ng-maxlength="32"
+          ng-controller="searchbar"
+          ng-change="search(searchQuery)">
+        </input>
+        <div id="intro" ng-show="page == 'intro'">
+          Welcome to Factoriole, the world's number one site for facts!
+          Check out the selection of recently added facts below, and click on them if you would like more details.
+        </div>
+        <div id="facts" ng-controller="facts" ng-show="showFacts">
+          <div class="fact" ng-repeat="fact in facts" ng-click="view(fact._id)">
+            <a>{{fact.fact}}</a>
+            <div class="source">{{fact.sources[0].citationMLA}}</div>
+          </div>
+        </div>
+        <div id="about" ng-show="page == 'about'">
+          <h2>About</h2>
+          Insert your 'About' section here.
+        </div>
+        <div id="contact" ng-show="page == 'contact'">
+          <h2>Contact</h2>
+          Insert your contact information here.
+        </div>
+        <div id="readingList" ng-show="page == 'readingList'">
+          <h2>Reading List</h2>
+        </div>
+        <div id="nofacts" ng-show="nofacts">No such facts found.</div>
+      </div>
+    </div>
+  </body>
+</html>

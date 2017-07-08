@@ -1,0 +1,46 @@
+h3 {
+  text-align: center;
+  margin-top: 25px;
+}
+
+#loginform {
+  margin-top: 30vh;
+}
+
+.boop {
+  width: 10vw;
+  min-width: 200px;
+}
+
+#usernamefield, #passwordfield {
+  background-color: #002222;
+  color: #00AAAA;
+  padding: 10px;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+#loginbutton {
+  border-radius: 5px;
+  background-color: #008888;
+  color: yellow;
+  padding: 10px;
+  border: 0;
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  float: center;
+}
+
+#loginbutton:hover {
+  color: yellow;
+  background-color: #00AAAA;
+}
+
+#loginbutton:disabled {
+  color: #AAAAAA;
+  background-color: #444444;
+}

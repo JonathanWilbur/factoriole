@@ -1,0 +1,24 @@
+<html ng-app="ang">
+  <head>
+    <title>Invite a New User</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <link rel="stylesheet" type="text/css" href="/invite.css">
+    <script type="text/javascript" src="/angular.min.js"></script>
+    <script type="text/javascript" src="/invite.js"></script>
+  </head>
+  <body>
+    <div id="loading" ng-show="!complete">Loading...</div>
+    <div id="results" ng-show="complete">
+      <div id="success" ng-show="success">
+        <h2>You have created an invite</h2>
+        <p>Copy the link below and send it to the invitee, preferrably through a secure channel.</p>
+        <p>This invite will be valid after exactly five minutes, and will be destroyed after one hour.</p>
+        <div id="inviteurl">/signup?invite={{invite}}</div>
+      </div>
+      <div id="failure" ng-show="!success">
+        You are not permitted to create new invites.
+      </div>
+    </div>
+  </body>
+</html>

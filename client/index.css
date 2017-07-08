@@ -1,0 +1,113 @@
+#sidebar {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #001111;
+  display: inline-block;
+  height: 100vh;
+  width: 180px;
+  vertical-align: top;
+}
+
+#search {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 12pt;
+  width: 100%;
+  background-color: black;
+  color: #00AAAA;
+}
+
+#searchbar {
+  background-color: #002222;
+  color: #00AAAA;
+  width: 80vw;
+  margin: 10px;
+  padding: 10px;
+  font-size: 12pt;
+  display: none;
+}
+
+#tagcloud {
+  margin-bottom: 20px;
+  width: 150px;
+}
+
+#navbar {
+  margin-bottom: 20px;
+}
+
+.nav {
+  display: block;
+}
+
+#friends {
+  margin-bottom: 20px;
+}
+
+#content-column {
+  display: inline-block;
+  height: 100vh;
+  width: 60vw;
+  vertical-align: top;
+  padding-left: 20px;
+  padding-right: 20px;
+  overflow-y: scroll;
+}
+
+.fact {
+  background-color: #001111;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+.fact:hover {
+  background-color: #001A1A;
+}
+
+.source {
+  font-size: 10pt;
+  font-style: italic;
+  margin-top: 5px;
+  color: #006666;
+}
+
+#nofacts {
+  display: inline;
+  float: center;
+}
+
+@media all and (max-width: 800px) {
+
+  #sidebar {
+    display: none;
+  }
+
+  #content-column {
+    width: 90vw;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #content-column div {
+    width: 80vw;
+  }
+
+  #intro {
+    display: none;
+  }
+
+  #searchbar {
+    display: block;
+    width: 80vw;
+    margin-left: 20px;
+  }
+
+  .source {
+    display: none;
+  }
+
+}

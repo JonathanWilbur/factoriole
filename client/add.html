@@ -1,0 +1,259 @@
+<html ng-app="addpage">
+  <head>
+    <title>Factoriole</title>
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./add.css" />
+    <script type="text/javascript" src="./angular.min.js"></script>
+    <script type="text/javascript" src="./add.js" defer></script>
+  </head>
+  <body>
+    <div id="headerdiv">
+      <span id="title"><a onclick="window.location = '/index.html'">Factoriole</a></span>
+      <span id="subtitle">The internet's greatest database for facts.</span>
+    </div>
+    <div class="underheader"></div>
+    <form name="addform" ng-controller="addform">
+      <div class="field">
+        <label>Fact:</label>
+        <input
+          type="text"
+          id="fact"
+          name="fact"
+          placeholder="Example: The average IQ of Africa is 75."
+          autocomplete="off"
+          ng-model="fact"
+          ng-maxlength="140"
+          ng-required="true">
+        </input>
+        <span class="warning" ng-show="!addform.fact.$error.maxlength">
+          {{140 - fact.length}} characters remaining.
+        </span>
+        <span class="error" ng-show="addform.fact.$error.maxlength">
+          You have exceeded the number of characters for this field.
+        </span>
+        <span class="error" ng-show="addform.$dirty && addform.fact.$error.required">
+          You must provide the actual fact itself!
+        </span>
+      </div>
+      <div class="field">
+        <label>Details (Optional):</label>
+        <textarea
+          id="details"
+          name="details"
+          placeholder="Enter more details here, if you have them."
+          ng-model="details"
+          ng-maxlength="65536">
+        </textarea>
+        <span class="warning" ng-show="!addform.details.$error.maxlength">
+          {{65536 - details.length}} characters remaining.
+        </span>
+        <span class="error" ng-show="addform.details.$error.maxlength">
+          You have exceeded the number of characters for this field.
+        </span>
+      </div>
+      <div class="field">
+        <label>Search Tags:</label>
+        <input
+          type="text"
+          class="tag"
+          id="tag1"
+          name="tag1"
+          placeholder="tag1"
+          autocomplete="off"
+          ng-model="tag1"
+          ng-maxlength="32"
+          ng-required="true">
+        </input>
+        <input
+          type="text"
+          class="tag"
+          id="tag2"
+          name="tag2"
+          placeholder="tag2"
+          autocomplete="off"
+          ng-model="tag2"
+          ng-maxlength="32"
+          ng-required="true">
+        </input>
+        <input
+          type="text"
+          class="tag"
+          id="tag3"
+          name="tag3"
+          placeholder="tag3"
+          autocomplete="off"
+          ng-model="tag3"
+          ng-maxlength="32"
+          ng-required="true">
+        </input>
+        <input
+          type="text"
+          class="tag"
+          id="tag4"
+          name="tag4"
+          placeholder="tag4"
+          autocomplete="off"
+          ng-model="tag4"
+          ng-maxlength="32"
+          ng-required="true">
+        </input>
+        <span
+          class="error"
+          ng-show="addform.tag1.$error.maxlength || addform.tag2.$error.maxlength || addform.tag3.$error.maxlength || addform.tag4.$error.maxlength">
+          No tag can exceed 32 characters. Please correct this error.
+        </span>
+        <span
+          class="warning"
+          ng-show="addform.tag1.$error.required || addform.tag2.$error.required || addform.tag3.$error.required || addform.tag4.$error.required">
+          You must provide at least four searchable tags for this fact.
+        </span>
+      </div>
+      <div class="field">
+        <label>Twitter Hashtags (Omit the '#') (Optional):</label>
+        <input
+          type="text"
+          class="hashtag"
+          id="hashtag1"
+          name="hashtag1"
+          placeholder="hashtag1"
+          autocomplete="off"
+          ng-model="hashtag1"
+          ng-maxlength="32">
+        </input>
+        <input
+          type="text"
+          class="hashtag"
+          id="hashtag2"
+          name="hashtag2"
+          placeholder="hashtag2"
+          autocomplete="off"
+          ng-model="hashtag2"
+          ng-maxlength="32">
+        </input>
+        <input
+          type="text"
+          class="hashtag"
+          id="hashtag3"
+          name="hashtag3"
+          placeholder="hashtag3"
+          autocomplete="off"
+          ng-model="hashtag3"
+          ng-maxlength="32">
+        </input>
+        <input
+          type="text"
+          class="hashtag"
+          id="hashtag4"
+          name="hashtag4"
+          placeholder="hashtag4"
+          autocomplete="off"
+          ng-model="hashtag4"
+          ng-maxlength="32">
+        </input>
+        <span
+          class="error"
+          ng-show="addform.hashtag1.$error.maxlength || addform.hashtag2.$error.maxlength || addform.hashtag3.$error.maxlength || addform.hashtag4.$error.maxlength">
+          No Twitter hashtag may exceed 32 characters. Please correct this error.
+        </span>
+      </div>
+      <div class="field">
+        <label>Related (Fact IDs) (Optional):</label>
+        <input
+          type="text"
+          class="related"
+          id="related1"
+          name="related1"
+          placeholder="related1"
+          autocomplete="off"
+          ng-model="related1"
+          ng-minlength="24"
+          ng-maxlength="24">
+        </input>
+        <input
+          type="text"
+          class="related"
+          id="related2"
+          name="related2"
+          placeholder="related2"
+          autocomplete="off"
+          ng-model="related2"
+          ng-minlength="24"
+          ng-maxlength="24">
+        </input>
+        <input
+          type="text"
+          class="related"
+          id="related3"
+          name="related3"
+          placeholder="related3"
+          autocomplete="off"
+          ng-model="related3"
+          ng-minlength="24"
+          ng-maxlength="24">
+        </input>
+        <input
+          type="text"
+          class="related"
+          id="related4"
+          name="related4"
+          placeholder="related4"
+          autocomplete="off"
+          ng-model="related4"
+          ng-minlength="24"
+          ng-maxlength="24">
+        </input>
+        <span
+          class="error"
+          ng-show="addform.related1.$error.maxlength || addform.related2.$error.maxlength || addform.related3.$error.maxlength || addform.related4.$error.maxlength">
+          Fact IDs are exactly 24 characters. You have exceeded 24 characters in one of the 'related' fields. Please correct this.
+        </span>
+        <span
+          class="error"
+          ng-show="addform.related1.$error.minlength || addform.related2.$error.minlength || addform.related3.$error.minlength || addform.related4.$error.minlength">
+          Fact IDs are exactly 24 characters. You are short of 24 characters in one of the 'related' fields. Please correct this.
+        </span>
+      </div>
+      <div class="field">
+        <label>MLA Citations:</label>
+        <input
+          type="text"
+          class="source"
+          id="source1"
+          name="source1"
+          placeholder="source1 (Required)"
+          autocomplete="off"
+          ng-model="source1"
+          ng-maxlength="512"
+          ng-required="true">
+        </input>
+        <input
+          type="text"
+          class="source"
+          id="source2"
+          name="source2"
+          placeholder="source2"
+          autocomplete="off"
+          ng-maxlength="512">
+        </input>
+        <input
+          type="text"
+          class="source"
+          id="source3"
+          name="source3"
+          placeholder="source3"
+          autocomplete="off"
+          ng-maxlength="512">
+        </input>
+        <span
+          class="warning"
+          ng-show="addform.source1.$error.required">
+          You must provide at least one MLA Citation. I recommend using EasyBib for this.
+        </span>
+      </div>
+      <div class="field">
+        <button id="submit" ng-disabled="addform.$invalid" ng-click="submit()">Submit</button>
+        <button id="clear" ng-click="clear()">Clear</button>
+      </div>
+    </form>
+  </body>
+</html>

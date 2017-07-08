@@ -1,0 +1,17 @@
+#content {
+  padding: 20px;
+}
+
+.resource {
+  background-color: #002222;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.method {
+  background-color: #003333;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}

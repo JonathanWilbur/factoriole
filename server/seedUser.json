@@ -1,0 +1,9 @@
+{
+  "name": "",
+  "password": {
+    "sha256": "",
+    "salt": ""
+  },
+  "admin": true,
+  "email": ""
+}

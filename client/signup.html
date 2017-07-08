@@ -1,0 +1,78 @@
+<html ng-app="signupapp">
+  <head>
+    <title>Factoriole</title>
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./signup.css" />
+    <script type="text/javascript" src="./angular.min.js"></script>
+    <script type="text/javascript" src="./signup.js" defer></script>
+  </head>
+  <body>
+    <h3>Sign up for Factoriole</h3>
+    <div id="signupdiv">
+      <form id="signupform" name="signupform" ng-controller="signupform" ng-submit="signup()">
+        <input
+          type="text"
+          placeholder="username"
+          id="usernamefield"
+          class="boop"
+          ng-model="username"
+          ng-required="true"
+          ng-minlength="2"
+          ng-maxlength="32">
+          <!--ng-pattern="usernameRegex"-->
+        </input>
+        <span class="boop warning" ng-show="signupform.username.$error.minlength">
+          Username may only contain letters and spaces and must be between 2 and 32 characters.
+        </span>
+        <input
+          type="password"
+          name="password1"
+          placeholder="password (min. 12 chars)"
+          id="passwordfield1"
+          class="boop"
+          ng-model="password1"
+          ng-required="true"
+          ng-minlength="12"
+          ng-maxlength="32">
+          <!--ng-pattern="passwordRegex"-->
+        </input>
+        <span class="boop warning" ng-show="signupform.password1.$error.minlength">
+          Password must be larger than 12 characters and less than 32 characters.
+        </span>
+        <input
+          type="password"
+          placeholder="password again"
+          id="passwordfield2"
+          class="boop"
+          ng-model="password2"
+          ng-required="true"
+          ng-minlength="12"
+          ng-maxlength="32">
+          <!--ng-pattern="passwordRegex"-->
+        </input>
+        <span class="boop warning" ng-show="password1 != password2">
+          Passwords must match.
+        </span>
+        <input
+          type="email"
+          placeholder="email (optional)"
+          id="emailfield"
+          class="boop"
+          ng-model="email"
+          ng-required="false">
+        </input>
+        <input
+          type="submit"
+          id="signupbutton"
+          class="boop"
+          value="Sign up"
+          ng-disabled="signupform.$invalid || (password1 != password2)">
+        </input>
+      </form>
+    </div>
+    <div id="intro">
+      <p>Welcome to Factoriole.</p>
+      <p>After you create an account, you will be able to post facts.</p>
+    </div>
+  </body>
+</html>

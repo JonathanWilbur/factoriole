@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Factoriole</title>
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/fact.css" />
+  </head>
+  <body>
+    <div id="headerdiv">
+      <span id="title"><a onclick="window.location = '/index.html'">Factoriole</a></span>
+      <span id="subtitle">The internet's greatest database for facts.</span>
+    </div>
+    <div id="content">
+      <div class="underheader"></div>
+      <h2 id="fact">
+        <label>Fact:</label>
+        <%= fact %>
+      </h2>
+      <div id="meta">
+        <div id="id">ID: <%= _id %></div>
+        <!--span id="author">Posted By <%= author %></span-->
+        <div id="timestamp">Posted <%= (new Date(timestamp)).toLocaleString() %></div>
+        <div>
+          <div id="tags">
+            <label>Searchable Tags: </label>
+            <%= tags.join(' | ') %>
+          </div>
+          <div id="hashtags">
+            <label>Twitter HashTags: </label>
+            <%= hashtags.join(' | ') %>
+          </div>
+        </div>
+        <span id="views">Views: <%= views %></span>
+      </div>
+      <% if (details) { %>
+        <div id="details">
+          <label>Details:</label>
+          <p><%= details %></p>
+        </div>
+      <% } %>
+      <div id="sources">
+        <label>Sources:</label>
+        <% sources.forEach(function (source) { %>
+          <div class="source">
+            <div class="citationMLA">MLA Citation: <%= source.citationMLA %></div>
+          </div>
+        <% }); %>
+      </div>
+      <% if (related && related[0]) { %>
+        <div id="related">
+          <label>Related:</label>
+          <% related.forEach(function (relation) { %>
+            <div class="relation">
+              <a href="/fact/<%= relation %>"><%= relation %></a>
+            </div>
+          <% }); %>
+        </div>
+      <% } %>
+      <div id="edit">
+        <a href="/edit.html?id=<%= _id %>">Click here to edit this fact.</a>
+      </div>
+    </div>
+  </body>
+</html>

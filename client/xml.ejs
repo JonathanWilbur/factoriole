@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fact>
+  <id><%= _id %></id>
+  <fact><%= fact %></fact>
+  <timestamp>(new Date(timestamp)).toLocaleString() %></timestamp>
+  <tags>
+    <% tags.forEach(function (tag) { %>
+      <tag><%= tag %></tag>
+    <% }); %>
+  </tags>
+  <hashtags>
+    <% hashtags.forEach(function (hashtag) { %>
+      <tag><%= hashtag %></tag>
+    <% }); %>
+  </hashtags>
+  <views><%= views %></views>
+  <details><%= details %></details>
+  <sources>
+    <% sources.forEach(function (source) { %>
+      <source>
+        <citationMLA>
+          <%= source.citationMLA %>
+        </citationMLA>
+        <authors>
+          <% source.authors.forEach(function (auth) { %>
+            <author><%= auth %></author>
+          <% }); %>
+        </authors>
+        <organizations>
+          <% source.organizations.forEach(function (org) { %>
+            <organization><%= org %></organization>
+          <% }); %>
+        </organizations>
+        <publicationDate><%= source.publicationDate %></publicationDate>
+        <url><%= source.url %></url>
+      </source>
+    <% }); %>
+  </sources>
+  <related>
+    <% related.forEach(function (relation) { %>
+      <relation><%= relation %></relation>
+    <% }); %>
+  </related>
+</fact>

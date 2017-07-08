@@ -1,0 +1,46 @@
+#content {
+  padding: 10px;
+  margin: 0px;
+}
+
+#meta {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#id, #author, #timestamp, #tags, #hashtags, #views {
+  color: #008888;
+  font-size: 10pt;
+  font-style: italic;
+}
+
+#details, #sources, #related {
+  margin-top: 20px;
+}
+
+#details p {
+  text-align: justify;
+  background-color: #001111;
+  border-radius: 5px;
+  width: 80vw;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin: 5px;
+}
+
+.source {
+  background-color: #001111;
+  border-radius: 5px;
+  width: 80vw;
+  padding: 10px;
+  margin: 5px;
+}
+
+#sources div {
+  width: 80vw;
+  margin-bottom: 5px;
+}
+
+#edit {
+  margin-top: 30px;
+}

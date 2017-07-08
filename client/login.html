@@ -1,0 +1,41 @@
+<html ng-app="loginapp">
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <link rel="stylesheet" type="text/css" href="/login.css">
+    <script type="text/javascript" src="/angular.min.js"></script>
+    <script type="text/javascript" src="/login.js"></script>
+  </head>
+  <body>
+    <h3>Login to Factoriole</h3>
+    <form id="loginform" name="loginform" ng-controller="loginform" ng-submit="login()">
+      <input
+        type="text"
+        placeholder="username"
+        id="usernamefield"
+        class="boop"
+        ng-model="username"
+        ng-required="true"
+        ng-minlength="2">
+        <!--ng-pattern="usernameRegex"-->
+      </input>
+      <input
+        type="password"
+        placeholder="password"
+        id="passwordfield"
+        class="boop"
+        ng-model="password"
+        ng-required="true"
+        ng-minlength="8">
+        <!--ng-pattern="passwordRegex"-->
+      </input>
+      <input
+        type="submit"
+        id="loginbutton"
+        class="boop"
+        value="Log In"
+        ng-disabled="loginform.$invalid">
+      </input>
+    </form>
+  </body>
+</html>

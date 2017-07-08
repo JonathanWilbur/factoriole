@@ -1,0 +1,67 @@
+h3 {
+  text-align: center;
+  margin-top: 25px;
+}
+
+#signupdiv {
+  margin-top: 50px;
+  width: 49vw;
+  display: inline-block;
+  padding: 0px;
+  vertical-align: top;
+}
+
+#signupform {
+  float: right;
+}
+
+.boop {
+  width: 10vw;
+  min-width: 200px;
+  display: block;
+}
+
+input[type='text'], input[type='password'], input[type='email'] {
+  color: #00AAAA;
+  background-color: #004444;
+  padding: 10px;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+#signupbutton:hover {
+  color: yellow;
+  background-color: #00AAAA;
+}
+
+#signupbutton:disabled {
+  color: #CCCCCC;
+  background-color: #888888;
+}
+
+#signupbutton {
+  border-radius: 5px;
+  color: yellow;
+  background-color: #006666;
+  padding: 10px;
+  border: 0;
+  display: block;
+  margin-top: 5px;
+}
+
+#intro {
+  display: inline-block;
+  padding: 0px;
+  margin-top: 50px;
+  width: 49vw;
+  float: right;
+  text-align: left;
+}
+
+#intro p {
+  width: 10vw;
+  min-width: 200px;
+  display: block;
+}
