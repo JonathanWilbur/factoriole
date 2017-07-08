@@ -66,10 +66,9 @@ You will then need to supply some other configuration directives in
 
 ### Running Factoriole.
 
-You can run ParanoYak with `npm start` or `/factoriole/server/main.js`. Make
+You can run ParanoYak with `sudo node /factoriole/server/main.js`. Make
 sure there is an opening in your firewall for ports 80 and 443, for HTTP and
-HTTPS respectively. You might need to run it as administrator, but I can't
-remember.
+HTTPS respectively. You need to run it as administrator.
 
 ## Technical Details
 
